@@ -20,8 +20,10 @@ cmd窗口--------netstat -ano列出所有端口的情况----------打开资源�
 ## virtualhost多站点配置
 #### 1、修改系统hosts文件（C:\Windows\System32\drivers\etc）
 在底部添加网址，如
-127.0.0.1  www.dev.seewo.com
+127.0.0.1  www.seewo.com
 #### 2、修改nginx配置 nginx/conf/nginx.conf
+监听www.seewo.com 80端口，指向本地的  D:/nginx-example 这个文件
+注： 如果www.seewo.com 对应端口没有配置，相当于访问127.0.0.1（系统host文件配置）
 ```
     # another virtual host using mix of IP-, name-, and port-based configuration                        
     #                        
