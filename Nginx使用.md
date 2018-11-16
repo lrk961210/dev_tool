@@ -41,6 +41,23 @@ cmd窗口--------netstat -ano列出所有端口的情况----------打开资源�
     #modify by lirunkai 20181116 for virtual host  www.seewo.com -e       
 ```
 
+#### 运行node程序时指向本地特定端口
+host配置
+···
+    127.0.0.1 www.node.com
+···
+
+host配置
+···
+    server {
+        listen 80;
+        server_name www.node.com;
+        location / {
+            proxy_pass http://127.0.0.1:3008;
+        }
+    }
+···
+
 
 
 
@@ -50,6 +67,53 @@ cmd窗口--------netstat -ano列出所有端口的情况----------打开资源�
 
 
 ## 本地配置 https 证书
-1、https://startssl.com/ 注册登录，获取证书
+#### 1、安装Openssl（http://slproweb.com/products/Win32OpenSSL.html）
+#### 2、配置环境变量以及生成签名证书
+```
+> cd c:\ssl
+// 设置变量
+> set OPENSSL_CONF=C:\OpenSSL-Win64\bin\openssl.cfg
+> echo %OPENSSL_CONF%
+//生成server.key
+> cd bin
+> openssl genrsa -out server.key 4096
+//生成request文件
+> openssl req -new -key server.key -out server.csr
+//获取私钥
+> openssl x509 -req -days 730 -in server.csr -signkey server.key -out server.crt
+```
+其中，server.crt就是我们的证书，server.key就是私钥。
 
+#### 3、在nginx中配置SSL
+```
+    # HTTPS server
+    #
+    server {
+       listen       443 ssl;
+       server_name  localhost;
+
+       ssl_certificate      C:\OpenSSL-Win64\bin\server.crt; # 修改之处
+       ssl_certificate_key  C:\OpenSSL-Win64\bin\server.key; # 修改之处
+
+       ssl_session_cache    shared:SSL:1m;
+       ssl_session_timeout  5m;
+
+       ssl_ciphers  HIGH:!aNULL:!MD5;
+       ssl_prefer_server_ciphers  on;
+
+       location / {
+           root   html;
+           index  index.html index.htm;
+       }
+    }
+```
+
+重启nginx后，访问https://localhost/  会出现安全提示，继续前往 看到nginx主页面
+
+
+注： 参考 https://troyyang.com/2017/11/07/windows-ssl-node-nginx/
+
+
+
+注： 一篇介绍ssl根证书的文章 https://support.dnsimple.com/articles/what-is-ssl-root-certificate/
 
