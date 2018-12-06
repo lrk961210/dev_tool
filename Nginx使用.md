@@ -17,6 +17,9 @@ Legacy versions：遗留的老版本的稳定版
 参考 https://blog.csdn.net/Oraclesand/article/details/77847255
 cmd窗口--------netstat -ano列出所有端口的情况----------打开资源管理器，找到PID是21548的进程
 
+#### nginx: [emerg] unknown log format "main" in D:/nginx-1.14.1/nginx-1.14.1/conf.d/ng-cloud.conf:28
+原因： 没有开启log_format选项（主配置文件中）
+
 ## virtualhost多站点配置
 #### 1、修改系统hosts文件（C:\Windows\System32\drivers\etc）
 在底部添加网址，如
