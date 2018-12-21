@@ -120,3 +120,17 @@ host配置
 
 注： 一篇介绍ssl根证书的文章 https://support.dnsimple.com/articles/what-is-ssl-root-certificate/
 
+
+## mac 下面的使用
+#### 安装brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#### 安装linux
+brew search nginx
+
+brew install nginx
+
+安装完以后，可以在终端输出的信息里看到一些配置路径：
+/usr/local/etc/nginx/nginx.conf （配置文件路径）
+/usr/local/var/www （服务器默认路径）
+/usr/local/Cellar/nginx/1.6.2 （安装路径）
