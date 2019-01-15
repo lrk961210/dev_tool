@@ -134,3 +134,21 @@ brew install nginx
 /usr/local/etc/nginx/nginx.conf （配置文件路径）
 /usr/local/var/www （服务器默认路径）
 /usr/local/Cellar/nginx/1.6.2 （安装路径）
+
+#### 常见问题
+```
+cvterdeMacBook-Pro:nginx cvter$ sudo nginx
+nginx: [emerg] bind() to 0.0.0.0:8181 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:8181 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:8181 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:8181 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:8181 failed (48: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
+nginx: [emerg] still could not bind()
+cvterdeMacBook-Pro:nginx cvter$ sudo nginx -s stop
+cvterdeMacBook-Pro:nginx cvter$ sudo nginx 
+```
