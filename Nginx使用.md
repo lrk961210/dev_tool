@@ -4,9 +4,9 @@ Mainline version：Mainline 是 Nginx 目前主力在做的版本，可以说是
 Stable version：最新稳定版，生产环境上建议使用的版本
 Legacy versions：遗留的老版本的稳定版
 
-启动: 双击nginx.exe启动 / 命令行 start nginx 
-停止： nginx.exe –s quit
-重新加载配置文件： nginx –s reload
+- 启动: 双击nginx.exe启动 / 命令行 start nginx 
+- 停止： nginx.exe –s quit
+- 重新加载配置文件： nginx –s reload
 
 访问 http://localhost/  出现nginx界面，证明安装成功
 
@@ -134,6 +134,9 @@ brew install nginx
 /usr/local/etc/nginx/nginx.conf （配置文件路径）
 /usr/local/var/www （服务器默认路径）
 /usr/local/Cellar/nginx/1.6.2 （安装路径）
+
+## mac 下https的配置
+https://www.jianshu.com/p/092049445f15
 
 #### 常见问题
 ```
