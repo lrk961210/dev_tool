@@ -1,4 +1,5 @@
 ## 安装 sourcetree
+// 账号用谷歌
 https://link.juejin.im/?target=https%3A%2F%2Fdownloads.atlassian.com%2Fsoftware%2Fsourcetree%2FSourcetree_2.6.3a.zip
 
 ## 安装git
