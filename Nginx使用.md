@@ -155,3 +155,9 @@ nginx: [emerg] still could not bind()
 cvterdeMacBook-Pro:nginx cvter$ sudo nginx -s stop
 cvterdeMacBook-Pro:nginx cvter$ sudo nginx 
 ```
+
+#### 清除dns缓存
+```
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
+```
