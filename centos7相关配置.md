@@ -44,6 +44,7 @@ $ mysql -uroot -p  #输入查看到的密码
 ```
 
 // 开放防火墙端口
+https://www.jianshu.com/p/bad33004bb4f
 ```
 sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
 sudo firewall-cmd --reload
